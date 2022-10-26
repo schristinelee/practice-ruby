@@ -7,6 +7,8 @@
 # puts "That #{plum[:texture]} textured fruit is #{plum[:color]} and it's #{plum[:price]} dollars."
 
 class Fruit
+  attr_reader :color, :price, :texture
+
   def initialize(input_color, input_price, input_texture)
     @color = input_color
     @price = input_price
