@@ -4,7 +4,7 @@
 
 # puts "This #{banana[:texture]} textured fruit is #{banana[:color]} and it's #{banana[:price]} dollars."
 # puts "This #{apple[:texture]} textured fruit is #{apple[:color]} and it's #{apple[:price]} dollars."
-# puts "This #{plum[:texture]} textured fruit is #{plum[:color]} and it's #{plum[:price]} dollars."
+# puts "That #{plum[:texture]} textured fruit is #{plum[:color]} and it's #{plum[:price]} dollars."
 
 class Fruit
   def initialize(input_color, input_price, input_texture)
