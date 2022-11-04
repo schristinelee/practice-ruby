@@ -7,4 +7,7 @@
 
 # puts "#{employee2[0]} #{employee2[1]} makes #{employee2[2]} a year."
 
-x
+# represent employee data as a hash
+
+employee1 = { "first_name" => "Majora", "last_name" => "Carter", "salary" => 80000, "active" => true }
+employee2 = { "first_name" => "Danilo", "last_name" => "Campos", "salary" => 70000, "active" => true }
