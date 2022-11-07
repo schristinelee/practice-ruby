@@ -17,6 +17,14 @@
 
 # represent employees as a class instance
 
+module EmailReportable
+  def send_report
+    puts "sending email..."
+    #use email sending library
+    puts "email sent!"
+  end
+end
+
 class Employee
   attr_reader :first_name, :last_name, :active
   attr_writer :active
@@ -60,17 +68,10 @@ employee1.print_info
 employee2.print_info
 
 class Manager < Employee
-  attr_reader :employees
-
+  include EmailReportable
   def initialize(input_options)
     super
     @employees = input_options[:employees]
-  end
-
-  def send_report
-    puts "sending email..."
-    #use email sending library
-    puts "email sent!"
   end
 
   def give_all_raises
@@ -91,18 +92,9 @@ end
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 manager.print_info
 manager.send_report
-pp manager.employees
-manager.give_all_raises
-pp manager.employees
-manager.fire_all_employees
-pp manager.employees
 
 class Intern < Employee
-  def send_report
-    puts "sending email..."
-    #use email sending library
-    puts "email sent!"
-  end
+  include EmailReportable
 end
 
 intern = Intern.new(first_name: "Adrienne", last_name: "Lowe", salary: 50000, active: true)
