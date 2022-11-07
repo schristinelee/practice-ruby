@@ -15,34 +15,34 @@ class Vehicle
   def turn(new_direction)
     @direction = new_direction
   end
+end
+
+class Car < Vehicle
+  def initialize
+    super
+    @make = "Honda"
+    @model = "Civic"
+  end
 
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
-class Car < Vehicle
+class Bike < Vehicle
   def initialize
     super
-    @color = color
+    @type = "Mountain"
+    @weight = 25
   end
 
-  def color
-    @color
-  end
-
-class Bike < Vehicle
   def ring_bell
     puts "Ring ring!"
   end
 end
 
-car = Car.new
-p car.accelerate
-car.honk_horn
-car.color
-
 bike = Bike.new
-p bike.accelerate
+car = Car.new
+
 bike.ring_bell
-bike.color
+car.honk_horn
