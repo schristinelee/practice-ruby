@@ -72,9 +72,22 @@ class Manager < Employee
     #use email sending library
     puts "email sent!"
   end
+
+  def give_all_raises
+    puts "gonna give everyone a raise!"
+    index = 0
+    @employees.length.times do
+      @employees[index].give_annual_raise
+      index = index + 1
+    end
+    # employees[0].give_annual_raise
+    # employees[1].give_annual_raise
+  end
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 manager.print_info
 manager.send_report
+pp manager.employees
+manager.give_all_raises
 pp manager.employees
