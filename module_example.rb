@@ -1,4 +1,4 @@
-class RingandHonkable
+module Vehiclable
   def initialize
     @speed = 0
     @direction = "north"
@@ -15,18 +15,20 @@ class RingandHonkable
   def turn(new_direction)
     @direction = new_direction
   end
+end
 
-  class Car
-    include RingandHonkable
+class Car
+  include Vehiclable
 
-    def honk_horn
-      puts "Beeeeeeep!"
-    end
+  def honk_horn
+    puts "Beeeeeeep!"
   end
+end
 
-  class Bike
-    def ring_bell
-      puts "Ring ring!"
-    end
+class Bike
+  include Vehiclable
+
+  def ring_bell
+    puts "Ring ring!"
   end
 end
